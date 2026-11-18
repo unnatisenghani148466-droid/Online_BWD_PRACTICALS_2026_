@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Information</title>
+</head>
+<body>
+
+    <h1>My College Information</h1>
+
+    <h2>About College</h2>
+
+    <p>
+        Our college provides quality education
+        and helps students develop technical skills.
+    </p>
+
+    <h2>College Location</h2>
+
+    <p><b>City:</b> Rajkot, Gujarat</p>
+
+    <h2>Google Map</h2>
+
+    <iframe
+        src="https://www.google.com/maps?q=Marwadi%20University%20Rajkot&output=embed"
+        width="500"
+        height="300">
+    </iframe>
+
+    <h2>HTML5 Geolocation</h2>
+
+    <button onclick="getLocation()">
+        Find My Location
+    </button>
+
+    <p id="result"></p>
+
+    <script>
+        function getLocation() {
+
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+
+                        document.getElementById("result").innerHTML =
+                        "Latitude: " + position.coords.latitude +
+                        "<br>Longitude: " + position.coords.longitude;
+
+                    },
+                    function() {
+                        document.getElementById("result").innerHTML =
+                        "Location permission denied or unavailable.";
+                    }
+                );
+
+            } else {
+                document.getElementById("result").innerHTML =
+                "Geolocation is not supported.";
+            }
+        }
+    </script>
+
+</body>
+</html>

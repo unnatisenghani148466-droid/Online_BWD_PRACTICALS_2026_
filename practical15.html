@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Website</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f0f4f8;
+        }
+
+        nav {
+            background: #222;
+            padding: 18px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h1::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: orange;
+            margin: 10px auto;
+        }
+
+        .product {
+            background: white;
+            width: 300px;
+            padding: 25px;
+            margin: 40px auto;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px gray;
+            transition: transform 0.4s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+
+        .product img:hover {
+            transform: rotate(2deg);
+        }
+
+        .price {
+            color: green;
+            font-weight: bold;
+        }
+
+        button {
+            background: orange;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkorange;
+            color: white;
+        }
+
+        .offer {
+            animation: move 2s infinite alternate;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-8px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#product">Product</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <h1 id="home">Welcome to Our Store</h1>
+
+    <div class="product" id="product">
+
+        <h2>Smart Watch</h2>
+
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+             alt="Smart Watch">
+
+        <p>Modern Smart Watch with stylish design.</p>
+
+        <p class="price">Price: ₹1999</p>
+
+        <h3 class="offer">Special Offer!</h3>
+
+        <button>Buy Now</button>
+
+    </div>
+
+    <div id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: store@example.com</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Eligibility Checker</title>
+</head>
+
+<body>
+
+    <h1>Student Eligibility Checker</h1>
+
+    <label>Student Name:</label>
+    <input type="text" id="name">
+
+    <br><br>
+
+    <label>Age:</label>
+    <input type="number" id="age">
+
+    <br><br>
+
+    <label>Attendance Percentage:</label>
+    <input type="number" id="attendance">
+
+    <br><br>
+
+    <label>Marks:</label>
+    <input type="number" id="marks">
+
+    <br><br>
+
+    <button onclick="checkEligibility()">
+        Check Eligibility
+    </button>
+
+    <h2 id="result"></h2>
+
+    <script>
+
+        function checkEligibility() {
+
+            let name = document.getElementById("name").value;
+            let age = Number(document.getElementById("age").value);
+            let attendance = Number(document.getElementById("attendance").value);
+            let marks = Number(document.getElementById("marks").value);
+
+            if (name.trim() === "" ||
+                document.getElementById("age").value === "" ||
+                document.getElementById("attendance").value === "" ||
+                document.getElementById("marks").value === "" ||
+                age <= 0 || attendance < 0 ||
+                attendance > 100 || marks < 0 || marks > 100) {
+
+                document.getElementById("result").innerHTML =
+                "Please enter valid details.";
+
+                return;
+            }
+
+            if (age >= 17 && attendance >= 75 && marks >= 40) {
+
+                document.getElementById("result").innerHTML =
+                name + " is Eligible for Examination.";
+
+            } else {
+
+                document.getElementById("result").innerHTML =
+                name + " is Not Eligible for Examination.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Canvas and SVG</title>
+</head>
+
+<body>
+
+    <h1>HTML5 Canvas and SVG</h1>
+
+    <h2>Canvas Drawing</h2>
+
+    <canvas id="myCanvas" width="500" height="300"
+            style="border:1px solid black;">
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Draw Rectangle
+        ctx.fillStyle = "lightblue";
+        ctx.fillRect(30, 30, 120, 70);
+
+        // Draw Circle
+        ctx.beginPath();
+        ctx.arc(230, 65, 40, 0, 2 * Math.PI);
+        ctx.fillStyle = "lightgreen";
+        ctx.fill();
+
+        // Draw Line
+        ctx.beginPath();
+        ctx.moveTo(30, 160);
+        ctx.lineTo(300, 160);
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        // Draw Text
+        ctx.font = "25px Arial";
+        ctx.fillStyle = "blue";
+        ctx.fillText("Hello Students!", 30, 220);
+    </script>
+
+    <h2>SVG College Logo</h2>
+
+    <svg width="300" height="220">
+
+        <circle cx="150" cy="100" r="80"
+                fill="lightblue" stroke="blue"
+                stroke-width="4"/>
+
+        <circle cx="150" cy="100" r="60"
+                fill="white" stroke="blue"
+                stroke-width="2"/>
+
+        <text x="150" y="90"
+              font-size="22"
+              text-anchor="middle"
+              fill="blue">
+            BCA
+        </text>
+
+        <text x="150" y="120"
+              font-size="14"
+              text-anchor="middle"
+              fill="black">
+            COLLEGE
+        </text>
+
+    </svg>
+
+    <h2>Thank You!</h2>
+
+</body>
+</html>

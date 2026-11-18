@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subject Selection</title>
+</head>
+
+<body>
+
+    <h1>BCA Semester 1 Subjects</h1>
+
+    <label>Select Subject:</label>
+
+    <select id="subject" onchange="showSubject()">
+
+        <option value="">Select Subject</option>
+
+        <option value="0">Entrepreneurship</option>
+        <option value="1">Mathematics 1</option>
+        <option value="2">AOC</option>
+        <option value="3">PP1</option>
+        <option value="4">BWD Theory</option>
+        <option value="5">ES</option>
+
+    </select>
+
+    <h2>Subject Details</h2>
+
+    <p id="details">Please Select a Subject.</p>
+
+    <script>
+
+        let subjects = [
+
+            {
+                name: "Entrepreneurship",
+                code: "C04ID0001",
+                type: "Theory"
+            },
+
+            {
+                name: "Mathematics 1",
+                code: "C05BC3101",
+                type: "Theory"
+            },
+
+            {
+                name: "AOC",
+                code: "C05BC3102",
+                type: "Theory"
+            },
+
+            {
+                name: "PP1",
+                code: "C05BC3103",
+                type: "Practical"
+            },
+
+            {
+                name: "BWD Theory",
+                code: "C05BC3104",
+                type: "Theory"
+            },
+
+            {
+                name: "ES",
+                code: "C05BC3105",
+                type: "Theory"
+            }
+
+        ];
+
+        function showSubject() {
+
+            let index = document.getElementById("subject").value;
+
+            if (index === "") {
+
+                document.getElementById("details").innerHTML =
+                "Please Select a Subject.";
+
+                return;
+            }
+
+            let s = subjects[index];
+
+            document.getElementById("details").innerHTML =
+                "Subject Name: " + s.name +
+                "<br>Subject Code: " + s.code +
+                "<br>Subject Type: " + s.type;
+
+        }
+
+    </script>
+
+</body>
+</html>
